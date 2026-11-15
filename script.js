@@ -14,8 +14,8 @@ for (const question of document.querySelectorAll('.question')) {
       if (buttonIndex === index && index !== correct) button.classList.add('incorrect');
     });
     question.querySelector('.feedback').textContent = index === correct
-      ? 'Correct! Well done.'
-      : `Not quite. The correct answer is: ${answers[correct].textContent}.`;
+      ? `Correct! ${question.dataset.explanation}`
+      : `The correct answer is ${answers[correct].textContent}. ${question.dataset.explanation}`;
   }));
 }
 
@@ -64,3 +64,45 @@ addEventListener('scroll', () => {
 addEventListener('resize', measureLogos);
 reducedMotion.addEventListener('change', measureLogos);
 measureLogos();
+
+const nav = document.querySelector('.site-header nav');
+const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+const sections = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+const indicator = document.createElement('span');
+indicator.className = 'nav-indicator';
+indicator.setAttribute('aria-hidden', 'true');
+nav.prepend(indicator);
+
+function selectNav(link, force = false) {
+  const current = nav.querySelector('[aria-current="location"]');
+  if (current === link && !force) return;
+  current?.removeAttribute('aria-current');
+  link.setAttribute('aria-current', 'location');
+  indicator.style.width = `${link.offsetWidth}px`;
+  indicator.style.height = `${link.offsetHeight}px`;
+  indicator.style.transform = `translate(${link.offsetLeft}px, ${link.offsetTop}px)`;
+}
+
+function syncNav() {
+  const threshold = document.querySelector('.site-header').offsetHeight + 48;
+  const index = sections.findLastIndex(section => section.getBoundingClientRect().top <= threshold);
+  selectNav(navLinks[Math.max(0, index)], true);
+}
+
+let navFrame;
+addEventListener('scroll', () => {
+  if (navFrame) return;
+  navFrame = requestAnimationFrame(() => {
+    syncNav();
+    navFrame = null;
+  });
+}, { passive: true });
+addEventListener('resize', () => {
+  indicator.style.transition = 'none';
+  syncNav();
+  requestAnimationFrame(() => indicator.style.removeProperty('transition'));
+});
+navLinks.forEach(link => link.addEventListener('click', () => selectNav(link)));
+indicator.style.transition = 'none';
+syncNav();
+requestAnimationFrame(() => indicator.style.removeProperty('transition'));

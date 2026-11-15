@@ -116,12 +116,6 @@ button,a,summary {
 .site-header nav a:hover {
   color: #bce4a4;
 }
-.site-header nav .nav-quiz {
-  padding: 10px 15px;
-  border: 1px solid #9cc48e;
-  border-radius: 30px;
-  color: #d6f1c8;
-}
 .hero {
   position: relative;
   min-height: 665px;
@@ -886,3 +880,64 @@ footer {
     width: 63px;
   }
 }
+/* Brighter blue palette and glass surfaces */
+:root { --forest:#174ba1; --deep:#103578; --leaf:#5aa9f2; --sage:#e7f3ff; --cream:#f7fbff; --ink:#122d59; --muted:#425b7d; --line:#c8daf0; }
+:focus-visible { outline-color:#1475e8; }
+.site-header { background:rgba(231,244,255,.68); color:var(--ink); border-bottom:1px solid #ffffffa8; box-shadow:0 12px 32px #18488720; backdrop-filter:blur(22px) saturate(170%); -webkit-backdrop-filter:blur(22px) saturate(170%); }
+.header-inner { width:min(1360px,calc(100% - 64px)); }
+.site-header nav { position:relative; gap:8px; padding:6px; border:1px solid #ffffffc9; border-radius:100px; background:linear-gradient(135deg,#ffffffa6,#d8edff88); box-shadow:inset 0 1px 1px #fff,0 7px 22px #2256a51e; }
+.site-header nav a { position:relative; z-index:1; padding:8px 10px; border-radius:100px; font-size:12px; transition:color .25s; }
+.site-header nav a:hover,.site-header nav a:focus-visible,.site-header nav a[aria-current="location"] { color:#0b4eae; }
+.site-header nav .nav-indicator { position:absolute; left:0; top:0; border:1px solid #ffffffdc; border-radius:100px; background:linear-gradient(145deg,#ffffffeb,#cae5ffb8); box-shadow:inset 0 1px 1px #fff,0 5px 16px #1c62bc59; backdrop-filter:blur(12px) saturate(180%); -webkit-backdrop-filter:blur(12px) saturate(180%); pointer-events:none; transition:transform .45s cubic-bezier(.22,1,.36,1),width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1); }
+.brand img { width:50px; height:55px; filter:drop-shadow(0 2px 3px #1c55a544); }
+.brand img:nth-child(2) { width:84px; }
+.brand img:last-child { width:50px; }
+.hero-shade { background:linear-gradient(90deg,#0b3276e0,#175aa9a8 48%,#74b6f315),linear-gradient(0deg,#0d367477,transparent 55%); }
+.hero-logos { left:44px; right:44px; }
+.hero-logos span { width:50px; height:55px; }
+.hero-logos span:nth-child(2) { width:84px; }
+.eyebrow { color:#2362b9; font-size:12px; }
+.eyebrow.light { color:#cfeaff; }
+h1 em { color:#d0ecff; }
+h2 em { color:#3179d0; }
+.hero p { font-size:19px; }
+.button { font-size:14px; transition:transform .25s,box-shadow .25s,background .25s; }
+.button-light { background:#e8f6ff; color:#103578; box-shadow:0 8px 24px #03296338; }
+.button:hover { transform:translateY(-3px); box-shadow:0 13px 26px #0a429750; }
+.section-heading p,.impact-row p { font-size:17px; }
+.image-reveal,.benefit-card,.impact-row,.team-card { border-radius:18px; box-shadow:0 10px 30px #18488712; }
+.image-label { border-radius:12px; background:#f6fbfff0; }
+.benefit-card,.team-card { background:#fff; }
+.benefit-icon { color:#347dd4; }
+.impact-row { background:#eaf4ff; }
+.protection-section { background:linear-gradient(145deg,#0d3a89,#2373c6); }
+.protection-section .section-heading p,.quiz-layout>div:first-child>p { color:#e1f1ff; }
+.protection-section h2 em,.quiz-section h2 em { color:#bde6ff; }
+.protection-card { background:linear-gradient(145deg,#ffffffd9,#e1f3ffbd); border:1px solid #ffffffa3; border-radius:24px; box-shadow:inset 0 1px 1px #fff,0 12px 30px #062e7166; backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); transition:transform .3s,box-shadow .3s; }
+.protection-card:hover { transform:translateY(-5px); box-shadow:0 18px 38px #062e7180; }
+.protection-card small { color:#286dc2; }
+.protection-copy p,.team-card p,.benefit-card p,.image-reveal>p { font-size:15px; }
+.quiz-section { background:linear-gradient(145deg,#123d8c,#2f80cf); }
+.quiz-list>h3 { margin:18px 0 2px; font-size:23px; }
+.question { border-color:#9acdf7; border-radius:16px; background:#ffffff12; }
+.question legend { font-size:17px; }
+.answers { grid-template-columns:repeat(2,1fr); }
+.answers button { border-radius:10px; font-size:14px; transition:transform .2s,background .2s; }
+.answers button:hover:not(:disabled) { background:#d9edff; transform:translateY(-2px); }
+.feedback { font-size:14px; }
+.qa-question { border:1px solid #9acdf7; border-radius:16px; padding:17px 20px; background:#ffffff18; }
+.qa-question summary { cursor:pointer; font-weight:700; font-size:17px; }
+.qa-question p { margin:13px 0 0; color:#eff8ff; }
+.references-list a,.references-list .reference-item { display:grid; grid-template-columns:55px 1.1fr 1fr 30px; gap:20px; align-items:center; border-bottom:1px solid var(--line); padding:24px 6px; }
+.references-list a:hover { background:#e7f3ff; }
+.references-list .reference-item strong { font-family:'Playfair Display',Georgia,serif; font-size:21px; }
+.references-list .reference-item span { color:#54739b; font-size:12px; }
+.references-list .reference-item small { color:var(--muted); font-size:12px; }
+.closing-section { background:radial-gradient(circle at 80% 20%,#74c4ff 0,transparent 32%),linear-gradient(135deg,#103c87,#2271c4); color:white; text-align:center; }
+.closing-content { max-width:720px; }
+.closing-section h2 { font-size:clamp(64px,9vw,110px); margin:15px 0; }
+.closing-section h2 em { color:#c6eaff; }
+.closing-section p { font-size:20px; margin-bottom:32px; }
+@media(max-width:1150px) { .brand img { width:44px;height:50px; } .brand img:nth-child(2) { width:74px; } .brand img:last-child { width:44px; } .hero-logos span { width:44px;height:50px; } .hero-logos span:nth-child(2) { width:74px; } }
+@media(max-width:850px) { .site-header nav { border-radius:18px; } .references-list .reference-item { grid-template-columns:30px 1fr; } .references-list .reference-item small { grid-column:2; } }
+@media(max-width:600px) { .header-inner { width:calc(100% - 32px); } .hero-logos { left:24px;right:24px; } .brand img { width:40px;height:46px; } .brand img:nth-child(2) { width:68px; } .brand img:last-child { width:40px; } .hero-logos span { width:40px;height:46px; } .hero-logos span:nth-child(2) { width:68px; } .answers { grid-template-columns:1fr; } }
