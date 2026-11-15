@@ -941,3 +941,7 @@ h2 em { color:#3179d0; }
 @media(max-width:1150px) { .brand img { width:44px;height:50px; } .brand img:nth-child(2) { width:74px; } .brand img:last-child { width:44px; } .hero-logos span { width:44px;height:50px; } .hero-logos span:nth-child(2) { width:74px; } }
 @media(max-width:850px) { .site-header nav { border-radius:18px; } .references-list .reference-item { grid-template-columns:30px 1fr; } .references-list .reference-item small { grid-column:2; } }
 @media(max-width:600px) { .header-inner { width:calc(100% - 32px); } .hero-logos { left:24px;right:24px; } .brand img { width:40px;height:46px; } .brand img:nth-child(2) { width:68px; } .brand img:last-child { width:40px; } .hero-logos span { width:40px;height:46px; } .hero-logos span:nth-child(2) { width:68px; } .answers { grid-template-columns:1fr; } }
+.brand img:nth-child(2) { width:126px; mix-blend-mode:multiply; }
+.hero-logos span:nth-child(2) { width:126px; }
+@media(max-width:1150px) { .brand img:nth-child(2),.hero-logos span:nth-child(2) { width:112px; } }
+@media(max-width:600px) { .brand img:nth-child(2),.hero-logos span:nth-child(2) { width:98px; } }
