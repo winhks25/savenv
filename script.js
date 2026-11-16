@@ -1,3 +1,24 @@
+const environmentDialog = document.querySelector('.environment-dialog');
+for (const card of document.querySelectorAll('.discovery-grid .image-reveal')) {
+  card.addEventListener('click', () => {
+    const image = card.querySelector('img');
+    const dialogImage = environmentDialog.querySelector('.dialog-image');
+    dialogImage.src = image.src;
+    dialogImage.alt = image.alt;
+    environmentDialog.querySelector('#environment-dialog-title').textContent = card.querySelector('.image-label').firstChild.textContent.trim();
+    environmentDialog.querySelector('#environment-dialog-description').textContent = card.dataset.description;
+    environmentDialog.showModal();
+  });
+}
+
+environmentDialog.addEventListener('click', event => {
+  if (event.target !== environmentDialog) return;
+  const bounds = environmentDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+    environmentDialog.close();
+  }
+});
+
 for (const question of document.querySelectorAll('.question')) {
   const answers = [...question.querySelectorAll('button')];
   const correct = Number(question.dataset.correct);

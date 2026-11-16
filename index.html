@@ -75,37 +75,28 @@
           </p>
         </div>
         <div class="discovery-grid">
-          <details class="image-reveal large">
-            <summary>
+          <button class="image-reveal large" type="button" data-description="The environment consists of living things, including humans, animals, and plants, as well as non-living things such as mountains, water, and the air we breathe.">
               <img src="assets/forest-light.webp" alt="Sunlight filtering through a green forest">
-              <span class="image-label">The world around us <b aria-hidden="true">+</b></span>
-            </summary>
-            <p>
-              The environment consists of living things, including humans, animals, and plants, as
-              well as non-living things such as mountains, water, and the air we breathe.
-            </p>
-          </details>
-          <details class="image-reveal">
-            <summary>
+              <span class="image-label">The world around us <b aria-hidden="true">↗</b></span>
+          </button>
+          <button class="image-reveal" type="button" data-description="It provides essential resources for living things, including food, shelter, habitats, and minerals.">
               <img src="assets/deer-forest.webp" alt="Deer among trees in a forest">
-              <span class="image-label">A home for life <b aria-hidden="true">+</b></span>
-            </summary>
-            <p>
-              It provides essential resources for living things, including food, shelter, habitats,
-              and minerals.
-            </p>
-          </details>
-          <details class="image-reveal">
-            <summary>
+              <span class="image-label">A home for life <b aria-hidden="true">↗</b></span>
+          </button>
+          <button class="image-reveal" type="button" data-description="Healthy ecosystems help maintain the natural world and protect the balance of our planet.">
               <img src="assets/orchard.webp" alt="Sunlit trees in a green orchard">
-              <span class="image-label">A delicate balance <b aria-hidden="true">+</b></span>
-            </summary>
-            <p>
-              Healthy ecosystems help maintain the natural world and protect the balance of our
-              planet.
-            </p>
-          </details>
+              <span class="image-label">A delicate balance <b aria-hidden="true">↗</b></span>
+          </button>
         </div>
+        <dialog class="environment-dialog" aria-labelledby="environment-dialog-title" aria-describedby="environment-dialog-description">
+          <form method="dialog"><button class="dialog-close" aria-label="Close dialog" type="submit">×</button></form>
+          <img class="dialog-image" alt="">
+          <div class="dialog-content">
+            <span class="eyebrow">01 / THE ENVIRONMENT</span>
+            <h3 id="environment-dialog-title"></h3>
+            <p id="environment-dialog-description"></p>
+          </div>
+        </dialog>
         <p class="interaction-hint">
           Select an image to learn more <span aria-hidden="true">↗</span>
         </p>
