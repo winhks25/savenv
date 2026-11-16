@@ -989,8 +989,8 @@ h2 em { color:#3179d0; }
 .references-list .reference-item strong { font-family:'Playfair Display',Georgia,serif; font-size:21px; }
 .references-list .reference-item span { color:#54739b; font-size:12px; }
 .references-list .reference-item small { color:var(--muted); font-size:12px; }
-.closing-section { background:radial-gradient(circle at 80% 20%,#74c4ff 0,transparent 32%),linear-gradient(135deg,#103c87,#2271c4); color:white; text-align:center; }
-.closing-content { max-width:720px; }
+.closing-section { position:relative; overflow:hidden; min-height:665px; display:grid; place-items:center; background:radial-gradient(circle at 80% 20%,#74c4ff 0,transparent 32%),linear-gradient(135deg,#103c87,#2271c4); color:white; text-align:center; }
+.closing-content { position:relative; z-index:1; max-width:720px; }
 .closing-section h2 { font-size:clamp(64px,9vw,110px); margin:15px 0; }
 .closing-section h2 em { color:#c6eaff; }
 .closing-section p { font-size:20px; margin-bottom:32px; }
