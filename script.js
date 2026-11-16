@@ -1,10 +1,16 @@
 const environmentDialog = document.querySelector('.environment-dialog');
+function fillGallery(container, paths, alt) {
+  container.replaceChildren(...paths.split('|').map(path => {
+    const image = document.createElement('img');
+    image.src = path;
+    image.alt = alt;
+    image.loading = 'lazy';
+    return image;
+  }));
+}
 for (const card of document.querySelectorAll('.discovery-grid .image-reveal')) {
   card.addEventListener('click', () => {
-    const image = card.querySelector('img');
-    const dialogImage = environmentDialog.querySelector('.dialog-image');
-    dialogImage.src = image.src;
-    dialogImage.alt = image.alt;
+    fillGallery(environmentDialog.querySelector('.dialog-gallery'), card.dataset.images, card.querySelector('.image-label').firstChild.textContent.trim());
     environmentDialog.querySelector('#environment-dialog-title').textContent = card.querySelector('.image-label').firstChild.textContent.trim();
     environmentDialog.querySelector('#environment-dialog-description').textContent = card.dataset.description;
     environmentDialog.showModal();
@@ -17,6 +23,25 @@ environmentDialog.addEventListener('click', event => {
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
     environmentDialog.close();
   }
+});
+
+const detailDialog = document.querySelector('#detail-dialog');
+for (const card of document.querySelectorAll('.benefit-card, .protection-card')) {
+  card.addEventListener('click', () => {
+    const benefit = card.classList.contains('benefit-card');
+    const title = benefit ? card.querySelector('h3').textContent.trim() : card.dataset.title;
+    detailDialog.classList.toggle('protection-view', !benefit);
+    detailDialog.querySelector('#detail-eyebrow').textContent = benefit ? 'THE ADVANTAGES' : 'OUR PROTECTION';
+    detailDialog.querySelector('#detail-title').textContent = title;
+    detailDialog.querySelector('#detail-description').textContent = card.querySelector('p').textContent.trim();
+    fillGallery(detailDialog.querySelector('.detail-gallery'), card.dataset.images, title);
+    detailDialog.showModal();
+  });
+}
+
+document.querySelector('.team-open').addEventListener('click', () => {
+  document.querySelector('.team-menu').open = false;
+  document.querySelector('#team-dialog').showModal();
 });
 
 for (const question of document.querySelectorAll('.question')) {

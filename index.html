@@ -18,7 +18,6 @@
       <div class="header-inner">
         <a class="brand" href="#home" aria-label="Our World Around Us, home">
           <img src="assets/yreo-logo-transparent.png" alt="">
-          <img src="assets/mcea-logo.jpg" alt="">
           <img src="assets/school-logo-transparent.png" alt="">
         </a>
         <nav aria-label="Main navigation">
@@ -28,35 +27,25 @@
           <a href="#actions">Human Actions</a>
           <a href="#protection">Our Protection</a>
           <a href="#quiz">Quiz</a>
-          <a href="#about">About Us</a>
           <a href="#references">References</a>
-          <a href="#closing">Thank You</a>
+          <a href="#closing">Conclusion</a>
         </nav>
       </div>
     </header>
     <main id="main">
       <section id="home" class="hero">
-        <div class="hero-image" role="img" aria-label="Wildflowers beneath mountains at sunset">
-        </div>
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true"><source src="new-images/ourworldaroundus.mp4" type="video/mp4"></video>
         <div class="hero-shade"></div>
         <div class="hero-logos" aria-hidden="true">
-          <span></span>
           <span></span>
           <span></span>
         </div>
         <div class="hero-content container">
           <span class="eyebrow light">00 / OUR WORLD AROUND US</span>
-          <h1>
-            Our World<br><em>Around Us</em>
-          </h1>
-          <p>
-            Nature gives us everything we need to thrive. Discover its beauty, understand the
-            pressures it faces, and see how small actions can make a difference.
-          </p>
-          <a class="button button-light" href="#environment">
-            Explore the story <span aria-hidden="true">↗</span>
-          </a>
+          <h1>THE LIVING CANVAS<br><em>OF EXISTENCE</em></h1>
+          <div class="hero-bottom"><p>Nature gives us everything we need to thrive. Discover its beauty, understand the pressures it faces, and see how small actions can make a difference.</p><a class="button button-light" href="#environment">Explore the story <span aria-hidden="true">↗</span></a></div>
         </div>
+        <details class="team-menu"><summary aria-label="More options">⋮</summary><button type="button" class="team-open"><img src="new-images/team.jpg" alt="The project team"><span>The Team ↗</span></button></details>
         <div class="hero-index" aria-hidden="true">
           01 <span></span> 06
         </div>
@@ -75,22 +64,22 @@
           </p>
         </div>
         <div class="discovery-grid">
-          <button class="image-reveal large" type="button" data-description="The environment consists of living things, including humans, animals, and plants, as well as non-living things such as mountains, water, and the air we breathe.">
+          <button class="image-reveal large" type="button" data-images="new-images/ -2.jpg|new-images/Download Floating trash bag in calm water reflects environmental concerns about ocean pollution for free.jpg" data-description="The environment consists of living things, including humans, animals, and plants, as well as non-living things such as mountains, water, and the air we breathe.">
               <img src="assets/forest-light.webp" alt="Sunlight filtering through a green forest">
               <span class="image-label">The world around us <b aria-hidden="true">↗</b></span>
           </button>
-          <button class="image-reveal" type="button" data-description="It provides essential resources for living things, including food, shelter, habitats, and minerals.">
+          <button class="image-reveal" type="button" data-images="new-images/elephant.jpg|new-images/rabbits.jpg" data-description="It provides essential resources for living things, including food, shelter, habitats, and minerals.">
               <img src="assets/deer-forest.webp" alt="Deer among trees in a forest">
               <span class="image-label">A home for life <b aria-hidden="true">↗</b></span>
           </button>
-          <button class="image-reveal" type="button" data-description="Healthy ecosystems help maintain the natural world and protect the balance of our planet.">
-              <img src="assets/orchard.webp" alt="Sunlit trees in a green orchard">
+          <button class="image-reveal" type="button" data-images="new-images/eco1.jpg|new-images/eco2.jpg" data-description="Healthy ecosystems help maintain the natural world and protect the balance of our planet.">
+              <img src="new-images/ecosystem.jpg" alt="Sunlit trees in a green orchard">
               <span class="image-label">A delicate balance <b aria-hidden="true">↗</b></span>
           </button>
         </div>
         <dialog class="environment-dialog" aria-labelledby="environment-dialog-title" aria-describedby="environment-dialog-description">
           <form method="dialog"><button class="dialog-close" aria-label="Close dialog" type="submit">×</button></form>
-          <img class="dialog-image" alt="">
+          <div class="dialog-gallery"></div>
           <div class="dialog-content">
             <span class="eyebrow">01 / THE ENVIRONMENT</span>
             <h3 id="environment-dialog-title"></h3>
@@ -116,7 +105,7 @@
             </p>
           </div>
           <div class="benefit-grid">
-            <article class="benefit-card">
+            <button class="benefit-card" type="button" data-images="new-images/orange.jpg|new-images/freshwater.jpg|assets/forest-light.webp">
               <span class="benefit-number">01</span>
               <div class="benefit-icon" aria-hidden="true">
                 ☀
@@ -128,8 +117,8 @@
                 Clean air, fresh water, fertile soil, and food support our daily needs and help
                 sustain life on Earth.
               </p>
-            </article>
-            <article class="benefit-card">
+            </button>
+            <button class="benefit-card" type="button" data-images="new-images/Summers.jpg">
               <span class="benefit-number">02</span>
               <div class="benefit-icon" aria-hidden="true">
                 ≈
@@ -141,8 +130,8 @@
                 Natural systems influence temperatures, rainfall, and weather patterns. A stable
                 climate supports agriculture and living things.
               </p>
-            </article>
-            <article class="benefit-card">
+            </button>
+            <button class="benefit-card" type="button" data-images="new-images/elephant.jpg|new-images/rabbits.jpg">
               <span class="benefit-number">03</span>
               <div class="benefit-icon" aria-hidden="true">
                 ♧
@@ -154,7 +143,7 @@
                 Forests, rivers, and other habitats give plants and animals places to live, grow,
                 and reproduce.
               </p>
-            </article>
+            </button>
           </div>
         </div>
       </section>
@@ -173,15 +162,13 @@
         </div>
         <div class="impact-list">
           <article class="impact-row">
-            <img
-              src="assets/land-pollution.webp"
-              alt="Plastic litter near an industrial area"
-              loading="lazy">
             <div>
               <span class="eyebrow">THE LAND</span>
               <h3>
                 A threat to our Earth
               </h3>
+              <video class="impact-video" autoplay muted loop controls playsinline><source src="new-images/human_land.mp4" type="video/mp4"></video>
+              <div class="impact-gallery"><img src="new-images/human_land_1.jpg" alt="Land pollution view 1" loading="lazy"><img src="new-images/human_land_2.jpg" alt="Land pollution view 2" loading="lazy"><img src="new-images/human_land_3.jpg" alt="Land pollution view 3" loading="lazy"></div>
               <p>
                 Litter, plastic waste, pesticides, and other chemicals can pollute soil and harm the
                 places where plants and animals live.
@@ -189,15 +176,13 @@
             </div>
           </article>
           <article class="impact-row">
-            <img
-              src="assets/water-pollution.webp"
-              alt="Plastic waste floating in water"
-              loading="lazy">
             <div>
               <span class="eyebrow">THE WATER</span>
               <h3>
                 When our lifeline is polluted
               </h3>
+              <video class="impact-video" autoplay muted loop controls playsinline><source src="new-images/human_water.mp4" type="video/mp4"></video>
+              <div class="impact-gallery"><img src="new-images/human_water_1.jpg" alt="Water pollution view 1" loading="lazy"><img src="new-images/human_water_2.jpg" alt="Water pollution view 2" loading="lazy"><img src="new-images/human_water_3.jpg" alt="Water pollution view 3" loading="lazy"></div>
               <p>
                 Rubbish thrown into rivers and oceans, along with oil spills, damages water
                 resources and threatens aquatic life.
@@ -205,15 +190,13 @@
             </div>
           </article>
           <article class="impact-row">
-            <img
-              src="assets/air-pollution.webp"
-              alt="Smokestacks releasing pollution into the air"
-              loading="lazy">
             <div>
               <span class="eyebrow">THE AIR</span>
               <h3>
                 The invisible problem
               </h3>
+              <video class="impact-video" autoplay muted loop controls playsinline><source src="new-images/human_air.mp4" type="video/mp4"></video>
+              <div class="impact-gallery"><img src="new-images/human_air_1.jpg" alt="Air pollution view 1" loading="lazy"><img src="new-images/human_air_2.jpg" alt="Air pollution view 2" loading="lazy"><img src="new-images/human_air_3.jpg" alt="Air pollution view 3" loading="lazy"></div>
               <p>
                 Air pollution affects the atmosphere we depend on. Protecting trees and reducing
                 harmful emissions helps keep air cleaner.
@@ -237,10 +220,10 @@
             </p>
           </div>
           <div class="protection-grid">
-            <details class="protection-card">
-              <summary>
+            <button class="protection-card" type="button" data-images="new-images/protection_land_1.jpeg" data-title="Land protection">
+              <div class="protection-front">
                 <img
-                  src="assets/school-recycling.webp"
+                  src="new-images/protection_land.jpg"
                   alt="Students sorting waste for recycling"
                   loading="lazy">
                 <span>
@@ -248,7 +231,7 @@
                   <strong>Protect our land</strong>
                   <b aria-hidden="true">↗</b>
                 </span>
-              </summary>
+              </div>
               <div class="protection-copy">
                 <h3>
                   Protecting our land, sustaining our future
@@ -260,11 +243,11 @@
                   school.
                 </p>
               </div>
-            </details>
-            <details class="protection-card">
-              <summary>
+            </button>
+            <button class="protection-card" type="button" data-images="new-images/protection_wter1.jpg" data-title="Water protection">
+              <div class="protection-front">
                 <img
-                  src="assets/water-cleanup.webp"
+                  src="new-images/protection_water.jpg"
                   alt="People collecting rubbish beside water"
                   loading="lazy">
                 <span>
@@ -272,7 +255,7 @@
                   <strong>Protect our water</strong>
                   <b aria-hidden="true">↗</b>
                 </span>
-              </summary>
+              </div>
               <div class="protection-copy">
                 <h3>
                   Every drop counts
@@ -283,11 +266,11 @@
                   resources at school and in daily life.
                 </p>
               </div>
-            </details>
-            <details class="protection-card">
-              <summary>
+            </button>
+            <button class="protection-card" type="button" data-images="new-images/protection_air_1.jpeg" data-title="Air protection">
+              <div class="protection-front">
                 <img
-                  src="assets/tree-planting.webp"
+                  src="new-images/protection_air.jpg"
                   alt="Students planting trees together"
                   loading="lazy">
                 <span>
@@ -295,7 +278,7 @@
                   <strong>Protect our air</strong>
                   <b aria-hidden="true">↗</b>
                 </span>
-              </summary>
+              </div>
               <div class="protection-copy">
                 <h3>
                   Planting trees today, breathing cleaner air tomorrow
@@ -306,13 +289,14 @@
                   future.
                 </p>
               </div>
-            </details>
+            </button>
           </div>
           <p class="interaction-hint light">
-            Select a card to see what our school is doing <span aria-hidden="true">↗</span>
+            Select a picture to see what our school is doing <span aria-hidden="true">↗</span>
           </p>
         </div>
       </section>
+      <dialog id="detail-dialog" class="page-dialog" aria-labelledby="detail-title"><form method="dialog"><button class="dialog-close" type="submit" aria-label="Back to section">←</button></form><div class="container section"><span class="eyebrow" id="detail-eyebrow"></span><h2 id="detail-title"></h2><div class="detail-gallery"></div><p id="detail-description"></p></div></dialog>
       <section id="quiz" class="section quiz-section">
         <div class="container quiz-layout">
           <div>
@@ -347,12 +331,12 @@
           </div>
         </div>
       </section>
-      <section id="about" class="section container">
+      <dialog id="team-dialog" class="page-dialog" aria-labelledby="team-title"><form method="dialog"><button class="dialog-close" type="submit" aria-label="Back to The Team">←</button></form><div class="container section">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">06 / ABOUT US</span>
-            <h2>
-              About <em>Us</em>
+            <span class="eyebrow">THE TEAM</span>
+            <h2 id="team-title">
+              The <em>Team</em>
             </h2>
           </div>
           <p>
@@ -409,7 +393,7 @@
             </div>
           </article>
         </div>
-      </section>
+        </div></dialog>
       <section id="references" class="section container references-section">
         <div class="section-heading">
           <div>
@@ -423,7 +407,7 @@
           </p>
         </div>
         <div class="references-list">
-          <div class="reference-item"><span>01</span><strong>Grade 8 Textbook</strong><small>Environmental studies reference</small></div>
+          <a href="https://edu4mm.com/wp-content/uploads/2025/02/Grade-8-English-new-course-121-pages.pdf" target="_blank" rel="noopener noreferrer"><span>01</span><strong>Grade 8 English Textbook PDF</strong><small>Open the textbook</small><b aria-hidden="true">↗</b></a>
           <a href="https://www.unep.org/" target="_blank" rel="noopener noreferrer">
             <span>02</span>
             <strong>United Nations Environment Programme</strong>
@@ -446,9 +430,9 @@
       </section>
       <section id="closing" class="section closing-section">
         <div class="container closing-content">
-          <span class="eyebrow light">08 / THANK YOU</span>
-          <h2>Thank <em>You</em></h2>
-          <p>Thank you for exploring our world with us. Small actions today can help protect it for tomorrow.</p>
+          <span class="eyebrow light">08 / CONCLUSION</span>
+          <h2>Our <em>Conclusion</em></h2>
+          <p>The environment sustains every living thing. When we understand its value and the harm pollution causes, we can make better choices. By reducing waste, protecting water, and caring for trees, each of us can help create a healthier future.</p>
           <a class="button button-light" href="#home">Back to the beginning <span aria-hidden="true">↑</span></a>
         </div>
       </section>
