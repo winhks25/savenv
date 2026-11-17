@@ -1065,3 +1065,18 @@ h2 em { color:#2A835F; }
 
 .protection-section .eyebrow.light { color:#8BBB92; }
 .quiz-section .eyebrow.light { color:white; }
+
+/* Page colors and navigation */
+.header-inner { position:relative; }
+.site-header .team-menu { position:relative; top:auto; right:auto; margin-left:auto; color:var(--ink); pointer-events:auto; }
+.team-menu summary { font-size:26px; padding:5px 13px; border:1px solid #ffffffd4; background:#f8fbf8d9; box-shadow:0 12px 30px #09232840; }
+.team-open { z-index:3; }
+.section-sage { background:linear-gradient(#e8f3e999,#e8f3e9c0),url('assets/advantages-forest.jpeg') center/cover; }
+.references-section { background:#e8f3e9; }
+.page-dialog.benefit-view { color:white; }
+.page-dialog.benefit-view .eyebrow,.page-dialog.benefit-view #detail-description { color:white; }
+.quiz-section { background:#315c4c; }
+.quiz-layout>div:first-child::after { display:none; }
+@media(max-width:850px) {
+  .site-header .team-menu { position:absolute; top:13px; right:0; }
+}

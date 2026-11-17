@@ -31,6 +31,9 @@ for (const card of document.querySelectorAll('.benefit-card, .protection-card'))
     const benefit = card.classList.contains('benefit-card');
     const title = benefit ? card.querySelector('h3').textContent.trim() : card.dataset.title;
     detailDialog.classList.toggle('protection-view', !benefit);
+    detailDialog.classList.toggle('benefit-view', benefit);
+    detailDialog.style.backgroundColor = benefit ? getComputedStyle(card).backgroundColor : '';
+    console.assert(!benefit || detailDialog.style.backgroundColor !== 'rgba(0, 0, 0, 0)', 'Advantage cards need a background color');
     detailDialog.querySelector('#detail-eyebrow').textContent = benefit ? 'THE ADVANTAGES' : 'OUR PROTECTION';
     detailDialog.querySelector('#detail-title').textContent = title;
     detailDialog.querySelector('#detail-description').textContent = card.querySelector('p').textContent.trim();
