@@ -556,6 +556,19 @@ h2 em {
   display: grid;
   gap: 14px;
 }
+.grammar-practice {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 14px;
+}
+#grammar-questions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+@media(max-width:700px) {
+  #grammar-questions { grid-template-columns: 1fr; }
+}
 .question {
   border: 1px solid #89b79a;
   border-radius: 6px;

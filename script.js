@@ -47,6 +47,78 @@ document.querySelector('.team-open').addEventListener('click', () => {
   document.querySelector('#team-dialog').showModal();
 });
 
+const grammarOptions = [
+  'A. has to / have to',
+  "B. don't have to / doesn't have to",
+  'C. must',
+  "D. mustn't"
+];
+const grammarExplanations = [
+  'This is a practical necessity.',
+  'This action is unnecessary.',
+  'This expresses strong advice.',
+  'This action should be avoided.'
+];
+const grammarQuestions = [
+  ['Humans and animals ___ breathe the oxygen provided by Earth’s atmosphere to live.', 0],
+  ['Trees ___ take in carbon dioxide as part of the ecosystem described in the passage.', 0],
+  ['We ___ pay for the warmth, light, and energy we receive from the sun; they are free of charge.', 1],
+  ['We ___ have water for daily life, and rain is one source of it.', 0],
+  ['People ___ rely on the natural environment for basic needs such as food, clothing, and shelter.', 0],
+  ['Because the environment supports a balanced ecosystem, we ___ protect it.', 2],
+  ['We ___ cut down trees carelessly, because doing so harms the environment.', 3],
+  ['People ___ overfish, because fish populations may almost run out.', 3],
+  ['To reduce environmental harm, we ___ avoid burning fossil fuels.', 2],
+  ['As the world’s population grows, communities ___ meet a growing need for houses and farmland.', 0],
+  ['We ___ destroy the forests that provide homes for wild animals.', 3],
+  ['Because some species have disappeared and others are endangered, we ___ protect the species that remain.', 2],
+  ['Farmers ___ use chemical fertilizers carelessly, because they can degrade the soil.', 3],
+  ['Factories ___ keep emitting dangerous greenhouse gases without concern for their effects.', 3],
+  ['Since greenhouse gases make the globe warmer, we ___ reduce harmful emissions.', 2],
+  ['Because the ozone layer is getting thinner and dangerous rays are entering the atmosphere, we ___ protect it.', 2],
+  ['Factories ___ dispose of chemical waste in rivers and seas.', 3],
+  ['To prevent the water pollution described in the passage, factories ___ manage their chemical waste properly.', 2],
+  ['Humans and animals ___ have enough clean drinking water to stay healthy.', 0],
+  ['Because overfishing has nearly exhausted fish in the sea, we ___ protect fish populations.', 2],
+  ['To protect food security and leave fish for people to eat in the future, we ___ stop overfishing.', 2],
+  ['We ___ continue activities that destroy the beautiful environment on which we depend.', 3],
+  ['If the environment stopped providing our basic needs, we ___ find another way to obtain them.', 0],
+  ['Because global warming and climate change are linked in the passage to floods, storms, landslides, droughts, and wildfires, we ___ change our behaviour.', 2],
+  ['To help stop global warming and climate change, we ___ reduce the number of trees we cut down.', 2],
+  ['To protect the environment, we ___ use chemical fertilizers when we can avoid them.', 3],
+  ['To help stop global warming, we ___ keep burning fossil fuels unnecessarily.', 3],
+  ['We ___ learn the three R’s: reduce, reuse, and recycle.', 2],
+  ['We ___ reduce the amount of waste we produce.', 2],
+  ['To reduce waste as the passage suggests, we ___ use plastic bags unnecessarily.', 3],
+  ['We ___ throw away an item after using it once if we can use it again.', 1],
+  ['Before throwing away a reusable item, we ___ consider using it again.', 2],
+  ['We ___ recycle old newspapers and plastic bottles to help save natural resources.', 2],
+  ['We ___ waste natural resources when reducing, reusing, and recycling can help conserve them.', 3],
+  ['If we care about future generations and planet Earth, we ___ take action to protect the environment before it is too late.', 2]
+];
+const grammarContainer = document.querySelector('#grammar-questions');
+grammarQuestions.forEach(([prompt, correct], index) => {
+  const question = document.createElement('fieldset');
+  question.className = 'question';
+  question.dataset.correct = correct;
+  question.dataset.explanation = grammarExplanations[correct];
+  const legend = document.createElement('legend');
+  legend.textContent = `${index + 1}. ${prompt}`;
+  const answers = document.createElement('div');
+  answers.className = 'answers';
+  answers.replaceChildren(...grammarOptions.map(option => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = option;
+    return button;
+  }));
+  const feedback = document.createElement('p');
+  feedback.className = 'feedback';
+  feedback.setAttribute('role', 'status');
+  question.append(legend, answers, feedback);
+  grammarContainer.append(question);
+});
+
 for (const question of document.querySelectorAll('.question')) {
   const answers = [...question.querySelectorAll('button')];
   const correct = Number(question.dataset.correct);
